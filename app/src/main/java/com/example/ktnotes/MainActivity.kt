@@ -18,6 +18,9 @@ import com.example.ktnotes.Database.NoteDatabase
 import com.example.ktnotes.Models.Note
 import com.example.ktnotes.Models.NoteViewModel
 import com.example.ktnotes.databinding.ActivityMainBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener , PopupMenu.OnMenuItemClickListener {
 
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener , Popu
     lateinit var viewModel: NoteViewModel
     lateinit var adapter: NotesAdapter
     lateinit var selectedNote: Note
+    lateinit var mAdView : AdView
 
     private val updateNote = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result->
 
@@ -46,8 +50,17 @@ class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener , Popu
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         //initialized the UI
         initUI()
+
+        MobileAds.initialize(this) {}
+
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
 
         viewModel = ViewModelProvider(this,
         ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(NoteViewModel::class.java)
@@ -59,6 +72,7 @@ class MainActivity : AppCompatActivity(), NotesAdapter.NotesClickListener , Popu
         }
 
         database = NoteDatabase.getDatabase(this)
+
     }
 
     private fun initUI() {

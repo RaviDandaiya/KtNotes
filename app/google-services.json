@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "747282821177",
+    "project_id": "ktnotes",
+    "storage_bucket": "ktnotes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747282821177:android:a777c107027d96678fdde8",
+        "android_client_info": {
+          "package_name": "com.example.ktnotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747282821177-uam4ce632ac01o82ep4l7r1rtnc86njn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIlA9y0woivasVKGveWlhhvxpi3CYSuao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747282821177-uam4ce632ac01o82ep4l7r1rtnc86njn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
